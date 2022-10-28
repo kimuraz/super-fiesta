@@ -1,6 +1,6 @@
 const styles = `
-html, body, div {
-    cursor: url(./jack.svg), auto;
+html, body {
+    cursor: url(https://raw.githubusercontent.com/kimuraz/super-fiesta/main/jack.svg), auto;
 }
 
 .ghost {
