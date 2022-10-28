@@ -1,5 +1,6 @@
 const styles = `
 .ghost {
+  all: initial;
   position: absolute;
   z-index: 9999;
   transform-origin: center;
@@ -7,6 +8,7 @@ const styles = `
   margin: 20px 0 0 -45px;
 }
 .ghost__eyes, .ghost__mouth {
+  all: initial;
   position: absolute;
   z-index: 1;
   width: 15px;
@@ -37,7 +39,6 @@ const styles = `
   top: 82px;
   height: 55px;
   width: 100%;
-  filter: url(#goo);
 }
 .ghost__tail:before {
   content: "";
@@ -95,6 +96,7 @@ const styles = `
 /* leaf animations */
 
 #leaves {
+    all: initial;
     position:fixed;
     top:-50px;
     width:100%;
@@ -103,6 +105,7 @@ const styles = `
 }
 
 #leaves i {
+    all: initial;
     display: inline-block;
     width: 200px;
     height: 150px;
@@ -119,6 +122,7 @@ const styles = `
 #leaves i:nth-of-type(3n) { -webkit-animation: falling3 5s 0s infinite; }
 
 #leaves i:before {
+  all: initial;
   position: absolute;
   content: '';
   top: 117px;
@@ -136,6 +140,7 @@ const styles = `
 }
 
 #leaves i:after {
+  all: initial;
   content: '';
   height: 125px;
   width: 10px;
@@ -236,10 +241,6 @@ const styles = `
 }
 `;
 
-// Append styles
-const styleEl = document.createElement("style");
-styleEl.textContent = styles;
-document.head.appendChild(styleEl);
 
 // Ghost HTML
 
@@ -252,7 +253,6 @@ ghostDiv.innerHTML = `
     <div class="ghost__mouth"></div>
   </div>
   <div class="ghost__tail">
-    <div class="ghost__rip"></div>
   </div>
 `;
 
@@ -297,6 +297,10 @@ fragment.appendChild(leavesDiv);
 
 window.addEventListener("load", () => {
     window.document.body.appendChild(fragment);
+    // Append styles
+    const styleEl = document.createElement("style");
+    styleEl.textContent = styles;
+    window.document.head.appendChild(styleEl);
 
     setTimeout(() => {
         let mouse = {
