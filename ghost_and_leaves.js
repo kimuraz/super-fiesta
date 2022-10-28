@@ -92,15 +92,6 @@ const styles = `
   }
 }
 
-#hello {
-  //background-color: rgb(255, 0, 0, 0.2);
-  position:absolute;
-  top:0;
-  width:100%;
-  height:800px;
-}
-
-
 /* leaf animations */
 
 #leaves {
@@ -108,6 +99,7 @@ const styles = `
     top:-50px;
     width:100%;
     text-align: right;
+    background: transparent;
 }
 
 #leaves i {
